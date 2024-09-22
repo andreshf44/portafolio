@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="componentes/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-rqn26AG5Pj86AF4SO72RK5fyefcQ/x32DNQfChxWvbXIyXFePlEktwD18fEz+kQU" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/7cd27636ef.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+
+    <header id="container-header">
+        <div class="header-nombre">
+            <a href="index.html">
+                <h1>Andrés Enrique Herrera Frey</h1>
+            </a>
+            
+        </div>
+        <div class="header-contenido">
+            <a id="cv" href="curriculum.html">Currículum</a>
+            <a id="pr" href="proyecto.html">Proyectos</a>
+            <a id="cn" href="contacto.html">Contacto</a>
+        </div>
+    </header>
+    <p class="p-cv">Ingeniero en informática y Gestión | Técnico en Programación Avanzada | Front-End Web Developer</p>
+
+    <section id="container-dragDrop">
+
+        <div class="btnes-drop">
+            <div id="drop1" class="content-drop" > 
+                <div class="element-drop" id="drag1">
+                    Prueba 1
+                        
+                    <div id="eventos-container" style="display: none;">
+                        <button onclick="cerrarEventos()" id="btn-cerrar" class="cerrarDragDrop">X</button>
+                        <div class="divImagen">
+                                <img src="img/pexels-alinaskazka-14844690.jpg" alt="">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="drop2" class="content-drop"> 
+                <div class="element-drop" id="drag2">
+                    <i class="ti ti-chart-histogram"></i> Prueba 2
+                    
+                    <div id="apuntes-container" style="display:none; max-width:none;">
+                        <button onclick="cerrarApuntes()" id="btn-cerrar" class="cerrarDragDrop2">X</button>
+                        <div class="divImagen">
+                            <img src="img/pexels-chevonrossouw-2558605.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="drop3" class="content-drop"> 
+                <div class="element-drop" id="drag3">
+                    <i class="ti ti-calendar"></i>Prueba 3 
+                    <div id="pizarra-container" style="display: none;">
+                        <button onclick="cerrarPizarra()" id="btn-cerrar" class="cerrarDragDrop3">X</button>
+                        <div class="divPizarra">
+                                <div class="embed-responsive embed-responsive-21by9 min-height">
+                                    <iframe class="embed-responsive-item" src="https://excalidraw.com/#room=c1bf8b3be981ad2faa1a,SxdLpjnYjLo1pG-lkY4f3g"></iframe>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contenedor-drop">
+                    <div class="contenedor-pizarra">
+                        <div id="divDrop3" class="divDrop" ondrop="dragDrop(event)" ondragover="allowDrop(event)" style="display: none;">
+                            <div id="contenedor3" class="div1" style="display:none" draggable="true"></div>
+                        </div>
+                    </div>
+                    <div class="contenedor-imagenes">
+                        <div id="divDrop1" class="divDrop" ondrop="dragDrop(event)" ondragover="allowDrop(event)" style="display: none;">
+                            <div id="contenedor" class="div1" style="display:none" draggable="true"></div>
+                        </div>
+                        <div id="divDrop2" class="divDrop" ondrop="dragDrop(event)" ondragover="allowDrop(event)" style="display: none;">
+                            <div id="contenedor2" class="div1" style="display:none" draggable="true"></div>
+                        </div>
+                    </div>
+        </div>
+
+       
+    </section>
+
+    <main>
+        <ul class="social-icons">
+            <li> 
+                <a href="https://api.whatsapp.com/send?phone=56944177821" id="whatsapp">
+                    <img src="img/whatsapp (1).png" alt="Whatsapp">
+                </a>
+                <div class="li-telefono">
+                    <h3>Teléfono</h3>
+                    <span>+56 9 44177821</span>
+                </div>
+            </li>
+            <li>
+                <a href="contacto.html" id="email">
+                    <img src="img/email.png" alt="Email">
+                </a>
+                <div class="li-telefono">
+                    <h3>E-mail</h3>
+                    <span>andreshf@live.cl</span>
+                </div>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/andres-herrera-frey-b4879335/" id="linkedin">
+                    <img src="img/linkedin (3).png" alt="LinkedIn">
+                </a>
+                <div class="li-telefono">
+                    <h3>LinkedIn</h3>
+                    <span>Andres Herrera Frey</span>
+                </div>
+            </li>
+            <li class="autor">
+                <p><a href="">Política de Privacidad</a></p>
+                <p>&copy; 2024 Creado por Andrés Herrera.</p>
+                
+            </li>
+        </ul>
+    </main>
+
+    <script>
+        
+        const btnDrop = document.querySelectorAll('.element-drop');
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Event listeners para los elementos que pueden ser arrastrados
+            document.getElementById('contenedor').addEventListener('dragstart', function(event) {
+            // Marcar el elemento arrastrado 
+                event.dataTransfer.setData("text/plain", "eventos");
+            });
+
+            document.getElementById('contenedor2').addEventListener('dragstart', function(event) {
+                event.dataTransfer.setData("text/plain", "apuntes");
+            });
+
+            document.getElementById('contenedor3').addEventListener('dragstart', function(event) {
+                event.dataTransfer.setData("text/plain", "pizarra");
+            });
+        });
+
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        btnDrop.forEach(function(dropBtn){
+        dropBtn.addEventListener('click',function(){
+        if(dropBtn.id==="drag1"){
+            const container = document.getElementById('contenedor');
+            document.getElementById('divDrop1').style.display="flex";
+            const eventosContainer = document.getElementById("eventos-container");
+            const btnEventos = document.getElementById('drop1');
+            btnEventos.style.display = 'none';
+            eventosContainer.style.display = "block";
+            container.style.display = 'block'
+            if(container){
+                container.appendChild(eventosContainer);
+            }
+        }else if(dropBtn.id==="drag2"){
+            const container = document.getElementById('contenedor2');
+            document.getElementById('divDrop2').style.display="flex";
+            const apuntesContainer = document.getElementById("apuntes-container");
+            const btnEventos = document.getElementById('drop2');
+            btnEventos.style.display = 'none';
+            apuntesContainer.style.display = "block"; // Muestra el contenedor
+            container.style.display = 'block'
+            if (container) {
+                container.appendChild(apuntesContainer); // Inserta el contenedor de la tabla dentro del div encontrado
+                // Guardar el id del div-color en el localStorage
+                //localStorage.setItem('divDropState2', divDrop.id);
+            }
+        }else if(dropBtn.id==="drag3"){
+            const container = document.getElementById('contenedor3');
+            document.getElementById('divDrop3').style.display="flex";
+            const pizarraContainer = document.getElementById("pizarra-container");
+            const btnEventos = document.getElementById('drop3');
+            btnEventos.style.display = 'none';
+            pizarraContainer.style.display = "block";
+            container.style.display = 'block'
+            if (container) {
+                container.appendChild(pizarraContainer); // Inserta el contenedor de la tabla dentro del div encontrado
+                // Guardar el id del div-color en el localStorage
+                //localStorage.setItem('divDropState3', divDrop.id);
+            }
+        }else{
+            const container = document.getElementById('contenedor4');
+            const tareaContainer = document.getElementById("tarea-container");
+            const btnEventos = document.getElementById('drop4');
+            btnEventos.style.display = 'none';
+            tareaContainer.style.display = "block"; // Muestra el contenedor de la tabla
+            container.style.display = 'block'
+            if (container) {
+                container.appendChild(tareaContainer); // Inserta el contenedor de la tabla dentro del div encontrado
+                // Guardar el id del div-color en el localStorage
+                //localStorage.setItem('divDropState4', divDrop.id);
+            }
+        }
+        
+        });
+        });
+
+        function dragDrop(event) {
+    event.preventDefault();
+    const data = event.dataTransfer.getData("text/plain");
+    if (data === "eventos") {
+        const eventosContainer = document.getElementById("contenedor");
+        const target = event.target.closest('.divDrop');
+        if (target) {
+            target.appendChild(eventosContainer);
+        }
+    }else if (data === "apuntes") {
+        const apuntesContainer = document.getElementById("contenedor2");
+        const target = event.target.closest('.divDrop');
+        if (target) {
+            target.appendChild(apuntesContainer);
+        }
+    }else if (data === "pizarra") {
+        const pizarraContainer = document.getElementById("contenedor3");
+        const target = event.target.closest('.divDrop');
+        if (target) {
+            target.appendChild(pizarraContainer);
+        }
+    }else{
+        const tareaContainer = document.getElementById("contenedor4");
+        const target = event.target.closest('.divDrop');
+        if (target) {
+            target.appendChild(tareaContainer);
+        }
+    }
+}
+        
+function cerrarEventos() {
+    const eventosContainer = document.getElementById("eventos-container");
+    const contentDrop = document.getElementById('drop1')    
+    contentDrop.style.display = "inline";
+    eventosContainer.style.display = "none"; // Oculta el contenedor de la tabla
+    document.getElementById('contenedor').style.display ="none";
+    localStorage.removeItem('divDropState1');
+}
+
+function cerrarApuntes() {
+    const apuntesContainer = document.getElementById("apuntes-container");
+    const contentDrop = document.getElementById('drop2')
+    contentDrop.style.display = "inline";
+    apuntesContainer.style.display = "none"; // Oculta el contenedor del gráfico
+    document.getElementById('contenedor2').style.display = "none";
+    localStorage.removeItem('divDropState2');
+}
+
+function cerrarPizarra() {
+    const pizarraContainer = document.getElementById("pizarra-container");
+    const contentDrop = document.getElementById('drop3')    
+    contentDrop.style.display = "inline";
+    pizarraContainer.style.display = "none"; // Oculta el contenedor de la tabla
+    document.getElementById('contenedor3').style.display ="none";
+    localStorage.removeItem('divDropState3');
+}
+
+</script>
+</body>
+</html>
