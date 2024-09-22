@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="componentes/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-rqn26AG5Pj86AF4SO72RK5fyefcQ/x32DNQfChxWvbXIyXFePlEktwD18fEz+kQU" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/7cd27636ef.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+
+    <header id="container-header">
+        <div class="header-nombre">
+            <a href="index.html">
+                <h1>Andrés Enrique Herrera Frey</h1>
+            </a>
+            
+        </div>
+        <div class="header-contenido">
+            <a id="cv" href="curriculum.html">Currículum</a>
+            <a id="pr" href="proyecto.html">Proyectos</a>
+            <a id="cn" href="contacto.html">Contacto</a>
+        </div>
+    </header>
+
+    <section id="container-fluid">
+
+        <div id="container-info" class="personal-info">
+            <div id="img-background" class="img-container">
+                <img src="img/pexels-junior-teixeira-2047905.jpg" alt="computadora">
+            </div>
+            <div class="perfil">
+                    <p>Ingeniero en informática y Gestión | Técnico en Programación Avanzada | Front-End Web Developer</p>
+
+                    <div class="presentacion-container">
+                        <div id="foto-perfil" class="img-container" >
+                            <img src="img/perfilEditada.JPG" alt="foto de perfil" >
+                        </div>
+                        <div id="subtitulo-perfil">
+                            <h1>Hola </h1>
+                            <h3>Un poco de mi
+                                <i class="fa-duotone fa-circle-chevron-down chevron-info"></i>
+                            </h3>
+                            <p class="presentacion">
+                                Mi experiencia abarca la creación de interfaces atractivas con CSS, HTML y 
+                                JavaScript, complementada por un sólido manejo de Git y el uso de frameworks
+                                como Vue.js. Además, tengo experiencia en el desarrollo con Ruby on Rails 
+                                en entornos de consola Linux, lo que me permite abordar diversos desafíos 
+                                tecnológicos con flexibilidad. He desempeñado roles clave como analista de
+                                datos, destacando en el análisis y visualización de datos complejos con 
+                                la herramienta Power BI. Mi historial en diseño y arte, así como en 
+                                jefatura de proyectos, combinado con habilidades de comunicación y 
+                                resolución de problemas, me posiciona como un profesional versátil y 
+                                proactivo, enfocado en contribuir al éxito de proyectos y al crecimiento 
+                                organizacional.
+                            </p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+       
+    </section>
+
+    <main>
+        <ul class="social-icons">
+            <li> 
+                <a href="https://api.whatsapp.com/send?phone=56944177821" id="whatsapp">
+                    <img src="img/whatsapp (1).png"Whatsapp">
+                </a>
+                <div class="li-telefono">
+                    <h3>Teléfono</h3>
+                    <span>+56 9 44177821</span>
+                </div>
+            </li>
+            <li>
+                <a href="contacto.html" id="email">
+                    <img src="img/email.png" alt="Email">
+                </a>
+                <div class="li-telefono">
+                    <h3>E-mail</h3>
+                    <span>andreshf@live.cl</span>
+                </div>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/andres-herrera-frey-b4879335/" id="linkedin">
+                    <img src="img/linkedin (3).png" alt="LinkedIn">
+                </a>
+                <div class="li-telefono">
+                    <h3>LinkedIn</h3>
+                    <span>Andres Herrera Frey</span>
+                </div>
+            </li>
+            <li class="autor">
+                <p><a href="">Política de Privacidad</a></p>
+                <p>&copy; 2024 Creado por Andrés Herrera.</p>
+                
+            </li>
+        </ul>
+    </main>
+
+    <script>
+        //Funcion para desplegar informacion personal en index.html
+
+        const infoChevron = document.querySelector('.chevron-info');
+        const personalInfo = document.querySelector('.perfil');
+
+        function toggleInfo(){
+            personalInfo.classList.toggle('show-info');
+        }
+
+        infoChevron.addEventListener('click', toggleInfo);
+    </script>
+</body>
+</html>
+
